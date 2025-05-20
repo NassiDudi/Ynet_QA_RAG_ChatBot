@@ -23,12 +23,26 @@ A Hebrew-language chatbot that scrapes news from Ynet, indexes them using embedd
 | `FAISS`                  | Efficient similarity search |
 | `HuggingFace Transformers` | Embedding & QA pipeline |
 
+## 🖥️ How to Run
+There are two ways you can run this project:
+
+Using Google Colab (Recommended for easy setup) Download the notebook:
+
+Visit the GitHub repository and download the Ynet_QA_RAG_ChatBot.ipynb file. Upload the notebook to Colab:
+
+Open Google Colab. Click on "File" > "Upload notebook" and select the downloaded .ipynb file.
+
+Clone this repository:
+
+git clone https://github.com/NassiDudi/Ynet_QA_RAG_ChatBot.git
+Install the required packages
 
 ## 🧠 Architecture Overview
 **These models were chosen because they are freely accessible(without payment), easy to integrate, and perform reasonably well for Hebrew, which lacks the extensive NLP support available for English.**
 This is a proof-of-concept (PoC) project demonstrating how you can build a **Hebrew-language news QA** chatbot using **only free models** and open-source tools. However:
-1.**English QA models** generally perform better due to greater training data and broader model support.
-2.**Paid models** (like OpenAI's GPT-4, Cohere's command R+, or commercial BERT variants) can offer much higher accuracy, more fluent answers, and better reasoning capabilities.
+
+-**English QA models** generally perform better due to greater training data and broader model support.
+-**Paid models** (like OpenAI's GPT-4, Cohere's command R+, or commercial BERT variants) can offer much higher accuracy, more fluent answers, and better reasoning capabilities.
 
 ### 1. **Scraping & Preprocessing**
 The function `scrape_articles_from_rss` uses Ynet's RSS feed to extract article titles and URLs. Each article is scraped with `requests` and parsed with `BeautifulSoup`.
@@ -150,6 +164,7 @@ qa_pipe({"question": query, "context": top_chunk})
 ## 🧪 Example Use
 
 📝 Note: Questions should be based on the topics covered in the article titles, as only those articles are indexed and processed.
+
 Ask:
 > "מה גרם להצתות בירושלים"
 
@@ -157,3 +172,7 @@ The model will:
 - Search for the most relevant article chunk
 - Extract the best short answer
 - Return both the answer and the source link
+
+## 🖼️ Example Screenshots
+![Example1](images/image1.png)
+![Example2](images/image2.png)
