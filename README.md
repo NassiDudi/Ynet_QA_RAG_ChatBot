@@ -42,6 +42,7 @@ Install the required packages
 This is a proof-of-concept (PoC) project demonstrating how you can build a **Hebrew-language news QA** chatbot using **only free models** and open-source tools. However:
 
 -**English QA models** generally perform better due to greater training data and broader model support.
+
 -**Paid models** (like OpenAI's GPT-4, Cohere's command R+, or commercial BERT variants) can offer much higher accuracy, more fluent answers, and better reasoning capabilities.
 
 ### 1. **Scraping & Preprocessing**
@@ -157,6 +158,7 @@ qa_pipe({"question": query, "context": top_chunk})
 - FAISS is stored in memory and rebuilt every time the app is refreshed.
 - Currently uses `xlm-roberta-large-squad2` because it's one of the best available models for multilingual QA.
 - The project uses the avichr/heBERT embedding model and the xlm-roberta-large-squad2 QA model because:
+  
     ✅ Both models are freely available via Hugging Face
     🧠 heBERT is a high-quality Hebrew sentence embedding model
     🌍 xlm-roberta-large-squad2 is one of the best multilingual models for QA, supporting Hebrew and many other languages
@@ -174,5 +176,5 @@ The model will:
 - Return both the answer and the source link
 
 ## 🖼️ Example Screenshots
-![Example1](images/image1.png)
-![Example2](images/image2.png)
+![Example1](images/image1.jpeg)
+![Example2](images/image2.jpeg)
