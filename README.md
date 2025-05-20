@@ -2,6 +2,8 @@
 
 A Hebrew-language chatbot that scrapes news from Ynet, indexes them using embeddings, and answers user questions using state-of-the-art natural language processing models. The app is built with Python and Gradio, using LangChain for information retrieval and HuggingFace for language models.
 
+![Example1](images/image1.jpeg)
+
 ## 🚀 Project Features
 
 - 🔄 **Live RSS Scraping** from Ynet
@@ -26,16 +28,18 @@ A Hebrew-language chatbot that scrapes news from Ynet, indexes them using embedd
 ## 🖥️ How to Run
 There are two ways you can run this project:
 
-Using Google Colab (Recommended for easy setup) Download the notebook:
+### 1.Using Google Colab (Recommended for easy setup) Download the notebook:
 
 Visit the GitHub repository and download the Ynet_QA_RAG_ChatBot.ipynb file. Upload the notebook to Colab:
 
 Open Google Colab. Click on "File" > "Upload notebook" and select the downloaded .ipynb file.
 
-Clone this repository:
+### 2.Clone this repository:
 
 git clone https://github.com/NassiDudi/Ynet_QA_RAG_ChatBot.git
-Install the required packages
+Create virtual environment
+Install the required packages using requirements.txt
+run the Ynet_QA_RAG_ChatBot.py file
 
 ## 🧠 Architecture Overview
 **These models were chosen because they are freely accessible(without payment), easy to integrate, and perform reasonably well for Hebrew, which lacks the extensive NLP support available for English.**
@@ -160,7 +164,9 @@ qa_pipe({"question": query, "context": top_chunk})
 - The project uses the avichr/heBERT embedding model and the xlm-roberta-large-squad2 QA model because:
   
     ✅ Both models are freely available via Hugging Face
+  
     🧠 heBERT is a high-quality Hebrew sentence embedding model
+  
     🌍 xlm-roberta-large-squad2 is one of the best multilingual models for QA, supporting Hebrew and many other languages
 
 ## 🧪 Example Use
@@ -168,13 +174,12 @@ qa_pipe({"question": query, "context": top_chunk})
 📝 Note: Questions should be based on the topics covered in the article titles, as only those articles are indexed and processed.
 
 Ask:
-> "מה גרם להצתות בירושלים"
+> "מה אמר יאיר גולן?"
 
 The model will:
 - Search for the most relevant article chunk
 - Extract the best short answer
 - Return both the answer and the source link
 
-## 🖼️ Example Screenshots
-![Example1](images/image1.jpeg)
+Exmaple Screenshot
 ![Example2](images/image2.jpeg)
